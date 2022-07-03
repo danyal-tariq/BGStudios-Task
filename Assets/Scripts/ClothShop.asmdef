@@ -1,0 +1,21 @@
+{
+    "name": "ClothShop",
+    "rootNamespace": "",
+    "references": [
+        "GUID:68765d262e2128e4ab49c983f3411946",
+        "GUID:82be110e44274d247b1ca1c12e7f4f85",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:8f5163e4753269348a069fd2fedcba29",
+        "GUID:d8ff72fdf1f9b014ab4291157a56a767",
+        "GUID:72d1fea872bd7a449bf3818f2b0a6708"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

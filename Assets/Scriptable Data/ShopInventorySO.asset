@@ -12,30 +12,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4c7ea0c9261ab744829051969512e62, type: 3}
   m_Name: ShopInventorySO
   m_EditorClassIdentifier: 
-  items:
+  torsoItems:
   - name: 
-    itemSprite: {fileID: 0}
     price: 100
+    isBought: 1
+    spineSkin: clothes/hoodie-blue-and-scarf
+  - name: 
+    price: 120
+    isBought: 0
+    spineSkin: clothes/hoodie-orange
+  legItems:
+  - name: 
+    price: 200
     isBought: 0
     spineSkin: legs/boots-pink
   - name: 
-    itemSprite: {fileID: 0}
-    price: 120
-    isBought: 0
-    spineSkin: legs/boots-red
-  - name: 
-    itemSprite: {fileID: 0}
-    price: 120
+    price: 200
     isBought: 0
     spineSkin: legs/pants-green
+  accesoryItems:
   - name: 
-    itemSprite: {fileID: 0}
-    price: 150
-    isBought: 1
-    spineSkin: legs/pants-jeans
-  - name: 
-    itemSprite: {fileID: 0}
-    price: 0
+    price: 100
     isBought: 0
-    spineSkin: default
+    spineSkin: accessories/backpack
   skeletonData: {fileID: 11400000, guid: 91a60be3ea058c245b89efb440a49a58, type: 2}

@@ -27,6 +27,7 @@
  * THE SPINE RUNTIMES, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *****************************************************************************/
 
+using ScriptableEvents.Events;
 using Spine.Unity.AttachmentTools;
 using System.Collections;
 using System.Collections.Generic;
@@ -38,14 +39,20 @@ namespace Spine.Unity.Examples {
 		public List<string> skinsToCombine;
 
 		Skin combinedSkin;
+        private SkinData skinData;
+        public SkinDataScriptableEvent skinEvent;
 
 		void Start ()
         {
             SetSkin();
+            skinData = new SkinData();
+            skinData.skinsToCombine = skinsToCombine;
+            skinEvent?.Raise(skinData);
         }
 
-        private void SetSkin()
+        public void SetSkin()
         {
+            
             var skeletonComponent = GetComponent<ISkeletonComponent>();
             if (skeletonComponent == null) return;
             var skeleton = skeletonComponent.Skeleton;
@@ -63,6 +70,16 @@ namespace Spine.Unity.Examples {
             skeleton.SetToSetupPose();
             var animationStateComponent = skeletonComponent as IAnimationStateComponent;
             if (animationStateComponent != null) animationStateComponent.AnimationState.Apply(skeleton);
+        }
+        public void SetSkin(List<string> skinsToAdd)
+        {
+            skinsToCombine = skinsToAdd;
+            SetSkin();
+        }
+        public void SetSkin(SkinData skins)
+        {
+            skinsToCombine = skins.skinsToCombine;
+            SetSkin();
         }
     }
 
