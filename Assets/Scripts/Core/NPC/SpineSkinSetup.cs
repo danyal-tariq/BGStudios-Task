@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-	public class NPCSpineSkinSetup : MonoBehaviour
+	public class SpineSkinSetup : MonoBehaviour
 	{
 
 	public SkeletonDataAsset skeletonDataAsset;
@@ -15,6 +15,7 @@ using UnityEngine.UI;
     [SpineSkin] public string Pant;
     [SpineSkin] public string Hair;
     [SpineSkin] public string Eyes;
+    [SpineSkin] public string[] Accesories;
 
     private void Start()
     {

@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4c7ea0c9261ab744829051969512e62, type: 3}
+  m_Name: ShopInventorySO
+  m_EditorClassIdentifier: 
+  items:
+  - name: 
+    itemSprite: {fileID: 0}
+    price: 100
+    isBought: 0
+    spineSkin: legs/boots-pink
+  - name: 
+    itemSprite: {fileID: 0}
+    price: 120
+    isBought: 0
+    spineSkin: legs/boots-red
+  - name: 
+    itemSprite: {fileID: 0}
+    price: 120
+    isBought: 0
+    spineSkin: legs/pants-green
+  - name: 
+    itemSprite: {fileID: 0}
+    price: 150
+    isBought: 1
+    spineSkin: legs/pants-jeans
+  - name: 
+    itemSprite: {fileID: 0}
+    price: 0
+    isBought: 0
+    spineSkin: default
+  skeletonData: {fileID: 11400000, guid: 91a60be3ea058c245b89efb440a49a58, type: 2}

@@ -39,24 +39,31 @@ namespace Spine.Unity.Examples {
 
 		Skin combinedSkin;
 
-		void Start () {
-			var skeletonComponent = GetComponent<ISkeletonComponent>();
-			if (skeletonComponent == null) return;
-			var skeleton = skeletonComponent.Skeleton;
-			if (skeleton == null) return;
+		void Start ()
+        {
+            SetSkin();
+        }
 
-			combinedSkin = combinedSkin ?? new Skin("combined");
-			combinedSkin.Clear();
-			foreach (var skinName in skinsToCombine) {
-				var skin = skeleton.Data.FindSkin(skinName);
-				if (skin != null) combinedSkin.AddSkin(skin);
-			}
+        private void SetSkin()
+        {
+            var skeletonComponent = GetComponent<ISkeletonComponent>();
+            if (skeletonComponent == null) return;
+            var skeleton = skeletonComponent.Skeleton;
+            if (skeleton == null) return;
 
-			skeleton.SetSkin(combinedSkin);
-			skeleton.SetToSetupPose();
-			var animationStateComponent = skeletonComponent as IAnimationStateComponent;
-			if (animationStateComponent != null) animationStateComponent.AnimationState.Apply(skeleton);
-		}
-	}
+            combinedSkin = combinedSkin ?? new Skin("combined");
+            combinedSkin.Clear();
+            foreach (var skinName in skinsToCombine)
+            {
+                var skin = skeleton.Data.FindSkin(skinName);
+                if (skin != null) combinedSkin.AddSkin(skin);
+            }
+
+            skeleton.SetSkin(combinedSkin);
+            skeleton.SetToSetupPose();
+            var animationStateComponent = skeletonComponent as IAnimationStateComponent;
+            if (animationStateComponent != null) animationStateComponent.AnimationState.Apply(skeleton);
+        }
+    }
 
 }

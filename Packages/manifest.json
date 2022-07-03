@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.chark.scriptable-events": "file:../Third Party Plugins/scriptable-events-2.1.0",
     "com.unity.cinemachine": "2.8.6",
     "com.unity.collab-proxy": "1.17.1",
     "com.unity.feature.2d": "1.0.0",

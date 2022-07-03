@@ -1,0 +1,10 @@
+{
+  "name": "Chark.ScriptableEvents.Tests",
+  "rootNamespace": "ScriptableEvents",
+  "references": [
+    "Chark.ScriptableEvents"
+  ],
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ]
+}

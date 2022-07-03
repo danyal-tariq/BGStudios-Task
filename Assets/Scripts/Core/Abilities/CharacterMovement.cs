@@ -9,7 +9,6 @@ public class CharacterMovement : MonoBehaviour
 {
     [SerializeField] private Transform character;
     [SerializeField] private float movementSpeed;
-
     [SerializeField] private Vector2 movementVector;
     [SerializeField] private SkeletonAnimation skeletonAnim;
 
