@@ -1,21 +1,23 @@
+using _Scripts.Interfaces;
 using ScriptableEvents.Events;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractableNpc : MonoBehaviour, IInteractable
+namespace _Scripts.Core.NPC
 {
-    [SerializeField] private StringScriptableEvent dialogueShowEvent;
-    [SerializeField] private SimpleScriptableEvent[] additionalEvents;
-    [TextArea(3,5)][SerializeField] private string dialogue;
-    
-   
-    public void Interact()
+    public class InteractableNpc : MonoBehaviour, IInteractable
     {
-        dialogueShowEvent.Raise(dialogue);
-        foreach(var e in additionalEvents)
+        [SerializeField] private StringScriptableEvent dialogueShowEvent;
+        [SerializeField] private SimpleScriptableEvent[] additionalEvents;
+        [TextArea(3, 5)] [SerializeField] private string dialogue;
+
+
+        public void Interact()
         {
-            e.Raise();
+            dialogueShowEvent.Raise(dialogue);
+            foreach (var e in additionalEvents)
+            {
+                e.Raise();
+            }
         }
     }
 }

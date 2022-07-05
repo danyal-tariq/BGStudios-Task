@@ -1,6 +1,8 @@
+using _Scripts.Spine;
+using ScriptableEvents;
 using UnityEngine;
 
-namespace ScriptableEvents.Listeners
+namespace _Scripts.ScriptableEvents.Listeners
 {
     [AddComponentMenu(
         ScriptableEventConstants.MenuNameCustom + "/Skin Data Scriptable Event Listener",

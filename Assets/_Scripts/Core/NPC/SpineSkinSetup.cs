@@ -1,13 +1,10 @@
 using Spine;
 using Spine.Unity;
 using UnityEngine;
-using UnityEngine.UI;
 
-
-	public class SpineSkinSetup : MonoBehaviour
-	{
-
-	public SkeletonDataAsset skeletonDataAsset;
+public class SpineSkinSetup : MonoBehaviour
+{
+    public SkeletonDataAsset skeletonDataAsset;
     public SkeletonAnimation skeletonAnim;
 
     [SpineSkin] public string baseSkin = "skin-base";
@@ -28,9 +25,8 @@ using UnityEngine.UI;
         addedSkins.AddSkin(skeletonData.FindSkin(Pant));
         addedSkins.AddSkin(skeletonData.FindSkin(Hair));
         addedSkins.AddSkin(skeletonData.FindSkin(Eyes));
-       
+
         skeletonAnim.skeleton.SetSkin(addedSkins);
         skeletonAnim.skeleton.SetSlotsToSetupPose();
     }
-
 }

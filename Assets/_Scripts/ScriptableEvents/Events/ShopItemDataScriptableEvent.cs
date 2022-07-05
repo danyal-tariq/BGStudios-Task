@@ -1,7 +1,8 @@
-using Utility;
+using ScriptableEvents;
 using UnityEngine;
+using Utility;
 
-namespace ScriptableEvents.Events
+namespace _Scripts.ScriptableEvents.Events
 {
     [CreateAssetMenu(
         fileName = "ShopItemDataScriptableEvent",

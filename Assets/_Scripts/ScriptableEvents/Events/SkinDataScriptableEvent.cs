@@ -1,6 +1,8 @@
+using _Scripts.Spine;
+using ScriptableEvents;
 using UnityEngine;
 
-namespace ScriptableEvents.Events
+namespace _Scripts.ScriptableEvents.Events
 {
     [CreateAssetMenu(
         fileName = "SkinDataScriptableEvent",

@@ -1,7 +1,8 @@
-using Utility;
+using ScriptableEvents;
 using UnityEngine;
+using Utility;
 
-namespace ScriptableEvents.Listeners
+namespace _Scripts.ScriptableEvents.Listeners
 {
     [AddComponentMenu(
         ScriptableEventConstants.MenuNameCustom + "/Shop Item Data Scriptable Event Listener",

@@ -27,24 +27,26 @@
  * THE SPINE RUNTIMES, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *****************************************************************************/
 
-using ScriptableEvents.Events;
-using Spine.Unity.AttachmentTools;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using _Scripts.ScriptableEvents.Events;
+using ScriptableEvents.Events;
+using Spine;
+using Spine.Unity;
 using UnityEngine;
 
-namespace Spine.Unity.Examples {
-	public class CombinedSkin : MonoBehaviour {
-		[SpineSkin]
-		public List<string> skinsToCombine;
+namespace _Scripts.Spine
+{
+    public class CombinedSkin : MonoBehaviour
+    {
+        [SpineSkin] public List<string> skinsToCombine;
 
         private Skin combinedSkin;
         private Skin defaultSkin;
         private SkinData skinData;
         public SkinDataScriptableEvent skinEvent;
 
-        private void Start ()
+        private void Start()
         {
             SetSkin();
             skinData = new SkinData
@@ -52,13 +54,13 @@ namespace Spine.Unity.Examples {
                 skinsToCombine = skinsToCombine
             };
             defaultSkin = new Skin("Default");
-            defaultSkin.CopySkin(combinedSkin);;
+            defaultSkin.CopySkin(combinedSkin);
+            ;
             skinEvent?.Raise(skinData);
         }
 
         private void SetSkin()
         {
-            
             var skeletonComponent = GetComponent<ISkeletonComponent>();
             if (skeletonComponent == null) return;
             var skeleton = skeletonComponent.Skeleton;
@@ -66,7 +68,8 @@ namespace Spine.Unity.Examples {
 
             combinedSkin = combinedSkin ?? new Skin("combined");
             combinedSkin.Clear();
-            foreach (var skin in skinsToCombine.Select(skinName => skeleton.Data.FindSkin(skinName)).Where(skin => skin != null))
+            foreach (var skin in skinsToCombine.Select(skinName => skeleton.Data.FindSkin(skinName))
+                         .Where(skin => skin != null))
             {
                 combinedSkin.AddSkin(skin);
             }
@@ -76,11 +79,13 @@ namespace Spine.Unity.Examples {
             var animationStateComponent = skeletonComponent as IAnimationStateComponent;
             if (animationStateComponent != null) animationStateComponent.AnimationState.Apply(skeleton);
         }
+
         public void SetSkin(List<string> skinsToAdd)
         {
             skinsToCombine = skinsToAdd;
             SetSkin();
         }
+
         public void SetSkin(SkinData skins)
         {
             skinsToCombine = skins.skinsToCombine;
@@ -93,15 +98,15 @@ namespace Spine.Unity.Examples {
             var skeleton = skeletonComponent?.Skeleton;
             if (skeleton == null) return;
 
-            combinedSkin.Clear();   
-           
-           
+            combinedSkin.Clear();
+
+
             combinedSkin = new Skin("combined");
             combinedSkin.CopySkin(defaultSkin);
-           
-            
 
-            foreach (var skin in skinToModify.skinsToCombine.Select(skinName => skeleton.Data.FindSkin(skinName)).Where(skin => skin != null))
+
+            foreach (var skin in skinToModify.skinsToCombine.Select(skinName => skeleton.Data.FindSkin(skinName))
+                         .Where(skin => skin != null))
             {
                 combinedSkin.AddSkin(skin);
             }
@@ -110,20 +115,22 @@ namespace Spine.Unity.Examples {
             skeleton.SetToSetupPose();
             var animationStateComponent = skeletonComponent as IAnimationStateComponent;
             if (animationStateComponent != null) animationStateComponent.AnimationState.Apply(skeleton);
-            
+
             defaultSkin.Clear();
             defaultSkin.CopySkin(combinedSkin);
         }
+
         public void EquipSkin(SkinData skinToModify)
         {
             var skeletonComponent = GetComponent<ISkeletonComponent>();
             var skeleton = skeletonComponent?.Skeleton;
             if (skeleton == null) return;
-            
+
             combinedSkin = new Skin("combined");
             combinedSkin.CopySkin(defaultSkin);
-            
-            foreach (var skin in skinToModify.skinsToCombine.Select(skinName => skeleton.Data.FindSkin(skinName)).Where(skin => skin != null))
+
+            foreach (var skin in skinToModify.skinsToCombine.Select(skinName => skeleton.Data.FindSkin(skinName))
+                         .Where(skin => skin != null))
             {
                 combinedSkin.AddSkin(skin);
             }
@@ -132,10 +139,9 @@ namespace Spine.Unity.Examples {
             skeleton.SetToSetupPose();
             var animationStateComponent = skeletonComponent as IAnimationStateComponent;
             if (animationStateComponent != null) animationStateComponent.AnimationState.Apply(skeleton);
-            
+
             defaultSkin.Clear();
             defaultSkin.CopySkin(combinedSkin);
         }
     }
-
 }

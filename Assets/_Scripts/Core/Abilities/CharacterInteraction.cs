@@ -1,44 +1,43 @@
+using _Scripts.Interfaces;
 using ScriptableEvents.Events;
 using UnityEngine;
 
-public class CharacterInteraction : MonoBehaviour
+namespace _Scripts.Core.Abilities
 {
-    [SerializeField] private BoolScriptableEvent interactionAvailableEvent;
-     private IInteractable interactableNpc;
-
-
-    private void Update()
+    public class CharacterInteraction : MonoBehaviour
     {
-        if(Input.GetKeyUp(KeyCode.E))
+        [SerializeField] private BoolScriptableEvent interactionAvailableEvent;
+        private IInteractable interactable;
+
+
+        private void Update()
         {
-            if(interactableNpc != null )
+            if (Input.GetKeyUp(KeyCode.E))
             {
-                interactableNpc.Interact(); 
+                if (interactable != null)
+                {
+                    interactable.Interact();
+                }
+            }
+        }
+
+        private void OnCollisionEnter2D(Collision2D col)
+        {
+            interactable = col.collider.GetComponentInChildren<IInteractable>();
+            if (interactable != null)
+            {
+                interactionAvailableEvent.Raise(true);
+            }
+        }
+
+        private void OnCollisionExit2D(Collision2D other)
+        {
+            if (interactable == null) return;
+            if (interactable.Equals(other.collider.GetComponentInChildren<IInteractable>()))
+            {
+                interactable = null;
+                interactionAvailableEvent.Raise(false);
             }
         }
     }
-
-    private void OnCollisionEnter2D(Collision2D col)
-    {
-        interactableNpc = col.collider.GetComponentInChildren<IInteractable>();
-        if (interactableNpc != null)
-        {
-            interactionAvailableEvent.Raise(true);
-            
-        }
-    }
-
-    private void OnCollisionExit2D(Collision2D other)
-    {
-        if(interactableNpc.Equals(other.collider.GetComponentInChildren<IInteractable>()))
-        {
-            interactableNpc = null;
-            interactionAvailableEvent.Raise(false);
-
-        }
-    }
-
-
-    
-    
 }

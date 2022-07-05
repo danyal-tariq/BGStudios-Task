@@ -1,9 +1,10 @@
-using Spine.Unity;
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+using Spine.Unity;
 
-public class SkinData
+namespace _Scripts.Spine
 {
-    [SpineSkin] public List<string> skinsToCombine;
+    public class SkinData
+    {
+        [SpineSkin] public List<string> skinsToCombine;
+    }
 }

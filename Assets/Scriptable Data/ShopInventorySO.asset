@@ -23,7 +23,7 @@ MonoBehaviour:
     name: 
     type: 0
     price: 120
-    isBought: 1
+    isBought: 0
     spineSkin: clothes/hoodie-orange
   - id: 2
     name: 

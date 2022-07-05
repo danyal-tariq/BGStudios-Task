@@ -1,12 +1,11 @@
-using Spine.Unity;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using Spine.Unity;
+using UnityEditor;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-[CreateAssetMenu(fileName = "ShopInventorySO",menuName ="ScriptableObjects/ShopInventory")]
+[CreateAssetMenu(fileName = "ShopInventorySO", menuName = "ScriptableObjects/ShopInventory")]
 public class ShopInventory : ScriptableObject
 {
     public List<ShopItem> torsoItems;
@@ -14,11 +13,11 @@ public class ShopInventory : ScriptableObject
     public List<ShopItem> accessoryItems;
     public SkeletonDataAsset skeletonData;
 
-    [Header("Json Fields")]
-    private InventoryData inventoryData;
+    [Header("Json Fields")] private InventoryData inventoryData;
 
     public string fileName;
     private string path;
+
     public void LoadData()
     {
         path = Path.Combine(Application.persistentDataPath, fileName);
@@ -26,17 +25,19 @@ public class ShopInventory : ScriptableObject
         {
             var json = File.ReadAllText(path);
             inventoryData = JsonUtility.FromJson<InventoryData>(json);
-            
+
             for (var index = 0; index < torsoItems.Count; index++)
             {
                 var bought = inventoryData.torsoStatus[index];
                 torsoItems[index].isBought = bought;
             }
+
             for (var index = 0; index < legItems.Count; index++)
             {
                 var bought = inventoryData.legStatus[index];
                 legItems[index].isBought = bought;
             }
+
             for (var index = 0; index < accessoryItems.Count; index++)
             {
                 var bought = inventoryData.accessoryStatus[index];
@@ -53,7 +54,6 @@ public class ShopInventory : ScriptableObject
             };
             SaveData();
         }
-
     }
 
     public void SaveData()
@@ -63,11 +63,13 @@ public class ShopInventory : ScriptableObject
             var item = torsoItems[index];
             inventoryData.torsoStatus[index] = item.isBought;
         }
+
         for (var index = 0; index < legItems.Count; index++)
         {
             var item = legItems[index];
             inventoryData.legStatus[index] = item.isBought;
         }
+
         for (var index = 0; index < accessoryItems.Count; index++)
         {
             var item = accessoryItems[index];
@@ -75,8 +77,9 @@ public class ShopInventory : ScriptableObject
         }
 
         var json = JsonUtility.ToJson(inventoryData);
-        File.WriteAllText(path,json);
+        File.WriteAllText(path, json);
     }
+
     [ContextMenu("Delete File")]
     public void DeleteData()
     {
@@ -85,13 +88,14 @@ public class ShopInventory : ScriptableObject
         RefreshEditorProjectWindow();
     }
 
-    private void RefreshEditorProjectWindow() 
+    private void RefreshEditorProjectWindow()
     {
-    #if UNITY_EDITOR
-        UnityEditor.AssetDatabase.Refresh();
-    #endif
+#if UNITY_EDITOR
+        AssetDatabase.Refresh();
+#endif
     }
 }
+
 [Serializable]
 public class ShopItem
 {
@@ -100,15 +104,16 @@ public class ShopItem
     public ItemType type;
     public int price;
     public bool isBought;
-    [SpineSkin(dataField ="skeletonData")] public string spineSkin;
+
+    [SpineSkin(dataField = "skeletonData")]
+    public string spineSkin;
 }
 
 public enum ItemType
 {
-    Torso,
-    Legs,
-    Accessory,
-    Head
+    Torso = 1,
+    Legs = 2,
+    Accessory = 3
 }
 
 public struct InventoryData
