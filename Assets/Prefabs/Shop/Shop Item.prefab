@@ -29,14 +29,15 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2768994703446389065}
   m_Father: {fileID: 5054375290576761915}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.43500003, y: 0.192}
+  m_AnchorMin: {x: 0.09, y: 0.20300001}
   m_AnchorMax: {x: 0.915, y: 0.3865742}
   m_AnchoredPosition: {x: 0, y: 0.46499634}
-  m_SizeDelta: {x: 0, y: 0.92999}
+  m_SizeDelta: {x: 0, y: 0.93}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1476545524646991631
 CanvasRenderer:
@@ -66,10 +67,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 200
+  m_text: 200$
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 540ad777c1f30d347834b941d6f1643a, type: 2}
-  m_sharedMaterial: {fileID: 6925655626833643669, guid: 540ad777c1f30d347834b941d6f1643a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 210afa58b51154c42aafd893258ab643, type: 2}
+  m_sharedMaterial: {fileID: 8861646771722222863, guid: 210afa58b51154c42aafd893258ab643, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -85,7 +86,7 @@ MonoBehaviour:
     bottomLeft: {r: 1, g: 1, b: 1, a: 1}
     bottomRight: {r: 1, g: 1, b: 1, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
+  m_spriteAsset: {fileID: 11400000, guid: 22dbc3844d3d828498193e0045e7e98f, type: 2}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
   m_TextStyleHashCode: -1183493901
@@ -93,7 +94,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 56.9
+  m_fontSize: 72
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -135,82 +136,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!1 &1736393799195564824
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5474366265017589676}
-  - component: {fileID: 5458717346714646074}
-  - component: {fileID: 5880978265245447986}
-  m_Layer: 5
-  m_Name: Coin
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &5474366265017589676
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1736393799195564824}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5054375290576761915}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.09, y: 0.192}
-  m_AnchorMax: {x: 0.43500003, y: 0.3865742}
-  m_AnchoredPosition: {x: 0, y: 0.46499634}
-  m_SizeDelta: {x: 0, y: 0.92999}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &5458717346714646074
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1736393799195564824}
-  m_CullTransparentMesh: 1
---- !u!114 &5880978265245447986
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1736393799195564824}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e1a25bc6cd191ae44965356e230e6122, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 1
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &2026293565241525574
 GameObject:
   m_ObjectHideFlags: 0
@@ -244,7 +169,7 @@ RectTransform:
   m_Children:
   - {fileID: 1253464848876423382}
   m_Father: {fileID: 5054375290576761915}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0.17642583}
@@ -553,7 +478,7 @@ RectTransform:
   m_Children:
   - {fileID: 5800531985700708724}
   m_Father: {fileID: 5054375290576761915}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -676,7 +601,6 @@ RectTransform:
   - {fileID: 358553880973658326}
   - {fileID: 1089814883083802427}
   - {fileID: 658520688158723764}
-  - {fileID: 5474366265017589676}
   - {fileID: 8817883542797688615}
   - {fileID: 2201006842780937083}
   m_Father: {fileID: 0}
@@ -708,6 +632,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
+  itemType: 0
   itemIcon: {fileID: 6514866800866362421}
   skinCombinerUtility: {fileID: 6398179788583596708}
   itemPrice: {fileID: 8554782540781836008}
@@ -715,6 +640,8 @@ MonoBehaviour:
   tryItem: {fileID: 9124782522373121325}
   buttonText: {fileID: 8684927654077896977}
   skinDataEvent: {fileID: 11400000, guid: 42e87ecbd13f482419b90fd3a78204a3, type: 2}
+  skinEquipEvent: {fileID: 11400000, guid: ff5fbec03df24a2469d63a629be2f474, type: 2}
+  buyEvent: {fileID: 11400000, guid: 8b6c09d00ec85f24d9a4c7a31f68f66d, type: 2}
 --- !u!114 &5054375290576761914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -745,6 +672,51 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &7455082519781967206
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2768994703446389065}
+  - component: {fileID: 536709904529149443}
+  m_Layer: 5
+  m_Name: Submesh
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2768994703446389065
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7455082519781967206}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 658520688158723764}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &536709904529149443
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7455082519781967206}
+  m_CullTransparentMesh: 1
 --- !u!1 &8216793642139865256
 GameObject:
   m_ObjectHideFlags: 0
@@ -813,8 +785,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: BUY
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 540ad777c1f30d347834b941d6f1643a, type: 2}
-  m_sharedMaterial: {fileID: 6925655626833643669, guid: 540ad777c1f30d347834b941d6f1643a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 210afa58b51154c42aafd893258ab643, type: 2}
+  m_sharedMaterial: {fileID: 8861646771722222863, guid: 210afa58b51154c42aafd893258ab643, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -948,8 +920,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Try
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 540ad777c1f30d347834b941d6f1643a, type: 2}
-  m_sharedMaterial: {fileID: 6925655626833643669, guid: 540ad777c1f30d347834b941d6f1643a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 210afa58b51154c42aafd893258ab643, type: 2}
+  m_sharedMaterial: {fileID: 8861646771722222863, guid: 210afa58b51154c42aafd893258ab643, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

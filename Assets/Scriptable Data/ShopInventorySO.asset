@@ -13,26 +13,61 @@ MonoBehaviour:
   m_Name: ShopInventorySO
   m_EditorClassIdentifier: 
   torsoItems:
-  - name: 
+  - id: 0
+    name: 
+    type: 0
     price: 100
-    isBought: 1
+    isBought: 0
     spineSkin: clothes/hoodie-blue-and-scarf
-  - name: 
+  - id: 1
+    name: 
+    type: 0
+    price: 120
+    isBought: 1
+    spineSkin: clothes/hoodie-orange
+  - id: 2
+    name: 
+    type: 0
     price: 120
     isBought: 0
-    spineSkin: clothes/hoodie-orange
+    spineSkin: clothes/dress-green
   legItems:
-  - name: 
+  - id: 0
+    name: 
+    type: 1
     price: 200
     isBought: 0
     spineSkin: legs/boots-pink
-  - name: 
+  - id: 1
+    name: 
+    type: 1
     price: 200
     isBought: 0
     spineSkin: legs/pants-green
-  accesoryItems:
-  - name: 
+  - id: 2
+    name: 
+    type: 1
+    price: 200
+    isBought: 0
+    spineSkin: legs/boots-red
+  accessoryItems:
+  - id: 0
+    name: 
+    type: 2
     price: 100
     isBought: 0
     spineSkin: accessories/backpack
+  - id: 1
+    name: 
+    type: 2
+    price: 100
+    isBought: 1
+    spineSkin: accessories/cape-blue
+  - id: 2
+    name: 
+    type: 2
+    price: 100
+    isBought: 0
+    spineSkin: accessories/hat-pointy-blue-yellow
   skeletonData: {fileID: 11400000, guid: 91a60be3ea058c245b89efb440a49a58, type: 2}
+  fileName: ShopInventory.json
